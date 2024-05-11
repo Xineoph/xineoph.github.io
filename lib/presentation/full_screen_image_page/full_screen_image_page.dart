@@ -23,7 +23,10 @@ class FullScreenImagePage extends StatelessWidget {
               child: Hero(
                 tag: 'imageHero',
                 child: Image.network(
-                  imageUrl,
+                  'https://corsproxy.io/?$imageUrl',
+                  headers: const {
+                    'X-Requested-With': 'XMLHttpRequest',
+                  },
                   fit: BoxFit.cover,
                   height: double.infinity,
                   width: double.infinity,

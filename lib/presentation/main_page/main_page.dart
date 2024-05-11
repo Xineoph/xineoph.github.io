@@ -33,7 +33,7 @@ class MainPage extends StatelessWidget {
             }
             return Container(
               constraints: BoxConstraints(
-                minHeight: MediaQuery.of(context).size.height, 
+                minHeight: MediaQuery.of(context).size.height,
               ),
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(20),
@@ -61,8 +61,13 @@ class MainPage extends StatelessWidget {
                           constraints: BoxConstraints(
                             maxHeight: MediaQuery.of(context).size.height * 0.5,
                           ),
-                          child: Image.network(
-                            state.nasaImageDataModel!.url,
+                          child: 
+                          
+                          Image.network(
+                            'https://corsproxy.io/?${state.nasaImageDataModel!.url}',
+                            headers: const {
+                              'X-Requested-With': 'XMLHttpRequest',
+                            },
                             fit: BoxFit.cover,
                           ),
                         ),
